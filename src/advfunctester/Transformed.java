@@ -1,9 +1,9 @@
 package advfunctester;
 
 /**
- * author: Dom
- * date: 10/30/2024
- * Lab
+ * @author Dom
+ * @date 01/09/2025
+ * Transformations
  */
 
 public class Transformed {

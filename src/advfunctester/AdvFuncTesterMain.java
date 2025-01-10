@@ -4,8 +4,11 @@ import java.util.Scanner;
 import javax.naming.OperationNotSupportedException;
 
 /**
- * author: Dom date: 10/10/2024 Quadratic roots and vertex calculator
+ * @author Dom
+ * @date 01/09/2025
+ * Advanced Functions Tester
  */
+
 public class AdvFuncTesterMain {
 
     public static void main(String[] args) {

@@ -1,6 +1,12 @@
 package advfunctester;
 import javax.naming.OperationNotSupportedException;
 
+/**
+ * author: Dom
+ * date: 01/09/2025
+ * Queue with Strings
+ */
+
 public class StringQueue {
     private Mylinkedlist<String> queue;
 
