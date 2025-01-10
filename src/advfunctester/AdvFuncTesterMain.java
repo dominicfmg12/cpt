@@ -17,7 +17,6 @@ public class AdvFuncTesterMain {
         System.out.println("Choose a topic:");
         System.out.println("1 - Polynomials ");
         System.out.println("2 - Functions");
-        System.out.println("3 - Trigonometry");
         System.out.print("> ");
         double topicChoice = input.nextDouble();
         //stops weird printing when the next input is a String
@@ -30,9 +29,11 @@ public class AdvFuncTesterMain {
         polyQuestions.enqueue("What is the IROC of -5x^2+10x+15 at x=3 (1 s.f)");
 
         StringQueue funcQuestions = new StringQueue();
-        Transformed vertexQuadratic = new Transformed(0.25, -3, -7, 9);
+        TransformedFunctions vertexQuadratic = new TransformedFunctions(0.25, -3, -7, 9);
+        Log log = new Log(-2, -2, -5, 1, 10);
         funcQuestions.enqueue("(-18,24) is a point on f(x) transformed to " + vertexQuadratic.toString() + ", what are its transformed coordinates");
         funcQuestions.enqueue("What is a, k, d, c when f(x) is horizontally stretched by .5 and reflected in the x-axis?");
+        funcQuestions.enqueue("What is the y-intercept for " + log.getLog());
 
         if (topicChoice == 1) {
             String answer1 = new String();
@@ -111,7 +112,7 @@ public class AdvFuncTesterMain {
                 System.out.println(e);
             }
 
-            Transformed vertexQuadratic2 = new Transformed();
+            TransformedFunctions vertexQuadratic2 = new TransformedFunctions();
             while (vertexQuadratic2.getA() != -1 && vertexQuadratic2.getK() != -2) {
                 try {
                     System.out.println(funcQuestions.peek());
@@ -131,9 +132,21 @@ public class AdvFuncTesterMain {
             }
 
             try {
-                polyQuestions.dequeue();
+                funcQuestions.dequeue();
             } catch (OperationNotSupportedException e) {
                 System.out.println(e);
+            }
+
+            double answer3 = 0;
+            while (answer3 != -1) {
+                try {
+                    System.out.println(funcQuestions.peek());
+                } catch (OperationNotSupportedException e) {
+                    System.out.println(e);
+                }
+
+                System.out.print("> ");
+                answer3 = input.nextDouble();
             }
 
             System.out.println("Good job! Run the code again to try the other topics.");
