@@ -4,8 +4,8 @@ package advfunctester;
  * @author Dom
  * @date 01/09/2025 Transformations
  */
+class Log extends TransformedFunctions {
 
- class Log extends TransformedFunctions {
     private int base;
 
     public Log(double a, double k, double d, double c, int base) {
@@ -16,14 +16,15 @@ package advfunctester;
     public String getLog() {
         return toString() + " (base " + this.base + " log)";
     }
-    
+
     // method that returns the y intercept of a log
-    public double yIntercept(Log log, double x) {
-        return (getA() * Math.log((getK() *(x - getD())))) + getC();
+    public double yIntercept(double a, double k, double d, double c, double x) {
+        double xCalculations = k * (x + d);
+        return (a * (Math.log(xCalculations))) + c;
     }
 
-
 }
+
 public class TransformedFunctions {
 
     private double a, k, d, c;
@@ -53,6 +54,14 @@ public class TransformedFunctions {
 
         this.d = d;
         this.c = c;
+    }
+
+    public double transformedX(double x) {
+        return x / getK() - getD();
+    }
+
+    public double transformedY(double y) {
+        return getA() * y + getC();
     }
 
     //setters

@@ -5,10 +5,8 @@ import javax.naming.OperationNotSupportedException;
 
 /**
  * @author Dom
- * @date 01/09/2025
- * Advanced Functions Tester
+ * @date 01/09/2025 Advanced Functions Tester
  */
-
 public class AdvFuncTesterMain {
 
     public static void main(String[] args) {
@@ -24,16 +22,17 @@ public class AdvFuncTesterMain {
 
         // the questions
         StringQueue polyQuestions = new StringQueue();
-        polyQuestions.enqueue("Express this in bracket notation: x is greater or equal to -1 and less than 5 (no spaces)");
-        polyQuestions.enqueue("What is a zero of 4x^3-2x^2+6x-3");
-        polyQuestions.enqueue("What is the IROC of -5x^2+10x+15 at x=3 (1 s.f)");
+        polyQuestions.enqueue("1. Express this in bracket notation: x is greater or equal to -1 and less than 5 (no spaces)");
+        polyQuestions.enqueue("2. What is a zero of 4x^3-2x^2+6x-3");
+        Quadratic quadraticEquation = new Quadratic(-5, 20, 5);
+        polyQuestions.enqueue("3. When thrown, a balls height is modelled with " + quadraticEquation.toString() + ". What is its velocity from 2 to 5 seconds");
 
         StringQueue funcQuestions = new StringQueue();
         TransformedFunctions vertexQuadratic = new TransformedFunctions(0.25, -3, -7, 9);
-        Log log = new Log(-2, -2, -5, 1, 10);
-        funcQuestions.enqueue("(-18,24) is a point on f(x) transformed to " + vertexQuadratic.toString() + ", what are its transformed coordinates");
-        funcQuestions.enqueue("What is a, k, d, c when f(x) is horizontally stretched by .5 and reflected in the x-axis?");
-        funcQuestions.enqueue("What is the y-intercept for " + log.getLog());
+        funcQuestions.enqueue("1. (-18,24) is a point on f(x) transformed to " + vertexQuadratic.toString() + ", what are its transformed coordinates");
+        funcQuestions.enqueue("2. What is a, k, d, c when f(x) is horizontally stretched by .5 and reflected in the x-axis?");
+        Log log = new Log(-5, -1, -2, 0, 10);
+        funcQuestions.enqueue("3. a) What is the x-intercept for " + log.getLog());
 
         if (topicChoice == 1) {
             String answer1 = new String();
@@ -58,7 +57,7 @@ public class AdvFuncTesterMain {
             }
 
             double answer2 = 0;
-            while (answer2 != 0.5) {
+            while (4 * Math.pow(answer2, 3) - 2 * Math.pow(answer2, 2) + 6 * answer2 - 3 != 0) {
                 try {
                     System.out.println(polyQuestions.peek());
                 } catch (OperationNotSupportedException e) {
@@ -76,7 +75,7 @@ public class AdvFuncTesterMain {
             }
 
             double answer3 = 0;
-            while (answer3 != -20) {
+            while (quadraticEquation.AROC(5, 2) != answer3) {
                 try {
                     System.out.println(polyQuestions.peek());
                 } catch (OperationNotSupportedException e) {
@@ -89,10 +88,10 @@ public class AdvFuncTesterMain {
 
             System.out.println("Good job! Run the code again to try the other topics.");
 
-
         } else if (topicChoice == 2) {
-            String answer1 = new String();
-            while (!"(13,15)".equals(answer1)) {
+            double answer1x = 0;
+            double answer1y = 0;
+            while (vertexQuadratic.transformedX(-18) != answer1x && vertexQuadratic.transformedY(24) != answer1y) {
                 //prints out the question first in the queue
                 try {
                     System.out.println(funcQuestions.peek());
@@ -100,9 +99,10 @@ public class AdvFuncTesterMain {
                     System.out.println(e);
                 }
 
-                System.out.print("> ");
-                answer1 = input.nextLine();
-
+                System.out.print("x> ");
+                answer1x = input.nextDouble();
+                System.out.print("y> ");
+                answer1y = input.nextDouble();
             }
 
             //removes the question above from the queue and puts the second one infront
@@ -138,7 +138,7 @@ public class AdvFuncTesterMain {
             }
 
             double answer3 = 0;
-            while (answer3 != -1) {
+            while (log.yIntercept(-5, -1, -2, 0, answer3) != 0) {
                 try {
                     System.out.println(funcQuestions.peek());
                 } catch (OperationNotSupportedException e) {
