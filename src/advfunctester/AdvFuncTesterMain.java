@@ -34,6 +34,7 @@ public class AdvFuncTesterMain {
         Log log = new Log(-5, -1, -2, 0, 10);
         funcQuestions.enqueue("3. a) What is the x-intercept for " + log.getLog());
 
+        //Polynomials
         if (topicChoice == 1) {
             String answer1 = new String();
             while (!"[-1,5)".equals(answer1)) {
@@ -88,6 +89,7 @@ public class AdvFuncTesterMain {
 
             System.out.println("Good job! Run the code again to try the other topics.");
 
+        //Functions
         } else if (topicChoice == 2) {
             double answer1x = 0;
             double answer1y = 0;
@@ -152,6 +154,5 @@ public class AdvFuncTesterMain {
             System.out.println("Good job! Run the code again to try the other topics.");
 
         }
-
     }
 }

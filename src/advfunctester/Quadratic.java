@@ -42,8 +42,17 @@ public class Quadratic {
         return this.a + "x^2 + " + this.b + "x + " + this.c;
     }
 
+    /**
+     * Solve for AROC
+     * @param x1 A double representing an initial x value of a function
+     * @param x2 A list representing the final x value of a function
+     * @return A double of the AROC
+     */
+
     public double AROC(double x2, double x1) {
-        return -((getA() * Math.pow(x2, 2) + getB() * x2 + getC()) - (getA() * Math.pow(x1, 2) + getB() * x1 + getC())) / (x2 - x1);
+        double xFinal= (getA() * Math.pow(x2, 2)) + (getB() * x2) + getC();
+        double xInitial= (getA() * Math.pow(x1, 2)) + (getB() * x1) + getC();
+        return (xFinal- xInitial) / (x2 - x1);
     }
 
 }
