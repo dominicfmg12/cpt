@@ -1,7 +1,9 @@
-package advfunctester;
+package tests;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+
+import advfunctester.Quadratic;
 
 public class QuadraticTest {
     @Test
@@ -17,6 +19,31 @@ public class QuadraticTest {
         // Assert - something must be true about are code (an expected value)
         double expected = -15;
         Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    void testAROC() {
+        
+    }
+
+    @Test
+    void testGetA() {
+        
+    }
+
+    @Test
+    void testGetB() {
+        
+    }
+
+    @Test
+    void testGetC() {
+        
+    }
+
+    @Test
+    void testToString() {
+        
     }
 
 }

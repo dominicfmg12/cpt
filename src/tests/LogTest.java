@@ -1,7 +1,9 @@
-package advfunctester;
+package tests;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+
+import advfunctester.Log;
 
 public class LogTest {
     @Test

@@ -1,0 +1,1 @@
+typeSearchIndex = [{"p":"advfunctester","l":"AdvFuncTesterMain"},{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"advfunctester","l":"Log"},{"p":"advfunctester","l":"Mylinkedlist"},{"p":"advfunctester","l":"Quadratic"},{"p":"advfunctester","l":"StringQueue"},{"p":"advfunctester","l":"TransformedFunctions"}];updateSearchResults();
